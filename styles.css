@@ -483,6 +483,7 @@ main {
 
 .trust-section,
 .compare-section,
+.pre-section,
 .publish-section {
   padding-top: 12px;
 }
@@ -595,7 +596,11 @@ main {
 .publish-points,
 .lead-section,
 .lead-points,
-.lead-actions {
+.lead-actions,
+.pre-layout,
+.pre-stat-grid,
+.strategy-chart,
+.chart-legend {
   display: grid;
 }
 
@@ -634,6 +639,210 @@ main {
 
 .compare-table {
   overflow: hidden;
+}
+
+.pre-layout {
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.pre-copy,
+.pre-visual,
+.chart-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.pre-copy,
+.pre-visual {
+  padding: 30px;
+}
+
+.pre-stat-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pre-stat {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pre-stat strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  color: var(--lime);
+}
+
+.pre-stat span,
+.pre-text-block p,
+.pre-list li,
+.chart-note,
+.chart-legend span {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.pre-text-block {
+  margin-top: 24px;
+}
+
+.pre-text-block h3 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+}
+
+.pre-list {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pre-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.pre-list li::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mint);
+}
+
+.chart-card {
+  height: 100%;
+  padding: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(108, 249, 212, 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(8, 17, 31, 0.78), rgba(8, 17, 31, 0.98));
+}
+
+.chart-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.chart-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.strategy-chart {
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.strategy-bar {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px 16px;
+  align-items: center;
+}
+
+.strategy-bar strong {
+  grid-column: 2 / 3;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.bar-value {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  font-family: "Archivo Black", Impact, sans-serif;
+  color: var(--gold);
+}
+
+.bar-track {
+  position: relative;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--mint), var(--lime));
+}
+
+.bar-low {
+  width: 24%;
+}
+
+.bar-mid {
+  width: 58%;
+}
+
+.bar-high {
+  width: 100%;
+}
+
+.featured-bar .bar-value {
+  color: #071219;
+  background: linear-gradient(135deg, var(--gold), #ffe28f);
+}
+
+.featured-bar strong {
+  color: var(--gold);
+}
+
+.chart-note {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chart-note strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.chart-legend {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-weight: 800;
 }
 
 .lead-section {
@@ -963,6 +1172,7 @@ main {
   .plans-grid,
   .process-grid,
   .trust-grid,
+  .pre-layout,
   .fit-section,
   .lead-section,
   .payment-panel,
@@ -987,6 +1197,11 @@ main {
   }
 
   .lead-form {
+    grid-template-columns: 1fr;
+  }
+
+  .pre-stat-grid,
+  .chart-legend {
     grid-template-columns: 1fr;
   }
 
