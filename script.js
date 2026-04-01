@@ -28,15 +28,21 @@ revealItems.forEach((item) => revealObserver.observe(item));
 
 const animateCounter = (node) => {
   const target = Number(node.dataset.target || 0);
+  const decimals = Number(node.dataset.decimals || 0);
+  const prefix = node.dataset.prefix || "";
+  const suffix = node.dataset.suffix || "";
   const duration = 900;
   const start = performance.now();
 
   const frame = (time) => {
     const progress = Math.min((time - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    const value = Math.round(target * eased);
+    const rawValue = target * eased;
+    const value = decimals > 0
+      ? rawValue.toFixed(decimals)
+      : String(Math.round(rawValue));
 
-    node.textContent = value;
+    node.textContent = `${prefix}${value}${suffix}`;
 
     if (progress < 1) {
       requestAnimationFrame(frame);
