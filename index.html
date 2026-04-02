@@ -71,7 +71,7 @@
           <ul class="hero-notes reveal" aria-label="Puntos de confianza">
             <li>Servicios separados para no mezclar mercados ni enfoques</li>
             <li>Canal free para ver el enfoque antes de entrar al premium</li>
-            <li>Pago con Stripe, PayPal, Bizum o Revolut</li>
+            <li>Pago con Stripe, PayPal o Revolut</li>
             <li>Acceso premium y control de suscripciones gestionado desde el bot</li>
           </ul>
         </div>
@@ -188,7 +188,7 @@
           </article>
           <article class="trust-card reveal">
             <h3>Pagos flexibles</h3>
-            <p>Stripe, PayPal, Bizum y Revolut hacen más fácil que cada usuario pague como le resulte cómodo.</p>
+            <p>Stripe, PayPal, Revolut y el propio flujo del bot permiten cerrar el acceso de forma cómoda.</p>
           </article>
           <article class="trust-card reveal">
             <h3>Acceso controlado</h3>
@@ -353,15 +353,15 @@
               <article class="month-card">
                 <h4>Marzo</h4>
                 <p>75.9% acierto</p>
-                <p>ROI +21.8%</p>
-                <strong>+51.8u</strong>
+                <p>ROI +16.82%</p>
+                <strong>+43.56u</strong>
               </article>
             </div>
 
             <div class="bank-note">
               <strong>Estimado con un bank de 500€ (1u = 5€)</strong>
-              <p>Enero: +106€ | Febrero: +209€ | Marzo: +259€</p>
-              <p>Total 3 meses: <strong>+574€</strong> sobre 500€ de bank.</p>
+              <p>Enero: +106€ | Febrero: +209€ | Marzo: +217.8€</p>
+              <p>Total 3 meses: <strong>+533.3€</strong> sobre 500€ de bank.</p>
             </div>
           </article>
 
@@ -372,6 +372,24 @@
             </figure>
           </aside>
         </div>
+      </section>
+
+      <section class="auto-section" id="datos-bot">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Datos del bot</p>
+          <h2>La landing puede mostrar automáticamente estadísticas y picks recientes</h2>
+          <p>
+            Este bloque está preparado para leer un JSON generado desde el bot. Si el fichero existe,
+            verás aquí un resumen automático y los últimos picks publicados por tipo de servicio.
+          </p>
+        </div>
+
+        <div class="auto-status reveal" id="auto-data-status">
+          Esperando datos automáticos del bot.
+        </div>
+
+        <div class="auto-stats-grid reveal" id="auto-stats-grid"></div>
+        <div class="latest-picks-grid reveal" id="latest-picks-grid"></div>
       </section>
 
       <section class="compare-section">
@@ -494,7 +512,7 @@
           <article class="process-step reveal">
             <span>03</span>
             <h3>Paga como prefieras</h3>
-            <p>Puedes usar Stripe, PayPal, Bizum o Revolut según te resulte más cómodo.</p>
+            <p>Puedes usar Stripe, PayPal, Revolut o seguir el flujo de pago privado del bot.</p>
           </article>
           <article class="process-step reveal">
             <span>04</span>
@@ -534,17 +552,15 @@
             <h2>Si prefieres cerrar la compra fuera de Stripe, también tienes alternativas</h2>
             <p>
               No todo el mundo quiere pagar de la misma forma. Por eso el acceso al servicio se puede
-              tramitar también por Bizum, PayPal, Revolut o conversación directa por Telegram.
+              tramitar también por PayPal, Revolut o conversación directa por Telegram.
             </p>
           </div>
 
           <div class="payment-options">
             <article class="payment-card">
-              <h3>Bizum</h3>
-              <p class="payment-value" id="bizum-number">688946111</p>
-              <button class="btn btn-ghost copy-btn" type="button" data-copy-target="bizum-number">
-                Copiar número
-              </button>
+              <h3>Pago en bot</h3>
+              <p class="payment-value">Bizum privado</p>
+              <p>Si eliges Bizum, el detalle aparece dentro del flujo de pago del bot y no en la web.</p>
             </article>
 
             <article class="payment-card">
